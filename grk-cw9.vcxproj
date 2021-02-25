@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\main_9.cpp" />
+    <ClCompile Include="src\Physics.cpp" />
+    <ClCompile Include="src\Render_Utils.cpp" />
+    <ClCompile Include="src\Shader_Loader.cpp" />
+    <ClCompile Include="src\SOIL\image_DXT.c" />
+    <ClCompile Include="src\SOIL\image_helper.c" />
+    <ClCompile Include="src\SOIL\SOIL.c" />
+    <ClCompile Include="src\SOIL\stb_image_aug.c" />
+    <ClCompile Include="src\Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\Physics.h" />
+    <ClInclude Include="src\Render_Utils.h" />
+    <ClInclude Include="src\Shader_Loader.h" />
+    <ClInclude Include="src\SOIL\image_DXT.h" />
+    <ClInclude Include="src\SOIL\image_helper.h" />
+    <ClInclude Include="src\SOIL\SOIL.h" />
+    <ClInclude Include="src\SOIL\stbi_DDS_aug.h" />
+    <ClInclude Include="src\SOIL\stbi_DDS_aug_c.h" />
+    <ClInclude Include="src\SOIL\stb_image_aug.h" />
+    <ClInclude Include="src\Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\shader_4_sun.frag" />
+    <None Include="shaders\shader_4_sun.vert" />
+    <None Include="shaders\shader_color.frag" />
+    <None Include="shaders\shader_color.vert" />
+    <None Include="shaders\shader_skybox.frag" />
+    <None Include="shaders\shader_skybox.vert" />
+    <None Include="shaders\shader_tex.frag" />
+    <None Include="shaders\shader_tex.vert" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1B448102-E76C-4347-BDC7-40D02A567DB6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>grk-cw9</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>grk-cw9</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>$(SolutionDir)dependencies\freeglut\lib;$(SolutionDir)dependencies\glew-2.0.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)dependencies\freeglut\include\GL;$(SolutionDir)dependencies\glew-2.0.0\include\GL;$(SolutionDir)dependencies\glm;$(IncludePath)</IncludePath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)dependencies\freeglut\include\GL;$(SolutionDir)dependencies\glew-2.0.0\include\GL;$(SolutionDir)dependencies\glm;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)dependencies\freeglut\lib;$(SolutionDir)dependencies\glew-2.0.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>dependencies\physx-4.1\include;dependencies\physx-4.1\source\common\include;dependencies\physx-4.1\source\common\src;dependencies\physx-4.1\source\physx\src;dependencies\physx-4.1\source\physx\src\device;dependencies\physx-4.1\source\physx\src\buffering;dependencies\physx-4.1\source\physxgpu\include;dependencies\physx-4.1\source\geomutils\include;dependencies\physx-4.1\source\geomutils\src;dependencies\physx-4.1\source\geomutils\src\contact;dependencies\physx-4.1\source\geomutils\src\common;dependencies\physx-4.1\source\geomutils\src\convex;dependencies\physx-4.1\source\geomutils\src\distance;dependencies\physx-4.1\source\geomutils\src\sweep;dependencies\physx-4.1\source\geomutils\src\gjk;dependencies\physx-4.1\source\geomutils\src\intersection;dependencies\physx-4.1\source\geomutils\src\mesh;dependencies\physx-4.1\source\geomutils\src\hf;dependencies\physx-4.1\source\geomutils\src\pcm;dependencies\physx-4.1\source\geomutils\src\ccd;dependencies\physx-4.1\source\lowlevel\api\include;dependencies\physx-4.1\source\lowlevel\software\include;dependencies\physx-4.1\source\lowlevel\common\include\pipeline;dependencies\physx-4.1\source\lowlevelaabb\include;dependencies\physx-4.1\source\lowleveldynamics\include;dependencies\physx-4.1\source\simulationcontroller\include;dependencies\physx-4.1\source\simulationcontroller\src;dependencies\physx-4.1\source\physxcooking\src;dependencies\physx-4.1\source\physxcooking\src\mesh;dependencies\physx-4.1\source\physxcooking\src\convex;dependencies\physx-4.1\source\scenequery\include;dependencies\physx-4.1\source\physxmetadata\core\include;dependencies\physx-4.1\source\immediatemode\include;dependencies\physx-4.1\source\pvd\include;dependencies\physx-4.1\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\PhysXExtensions_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\PhysX_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\PhysXPvdSDK_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\PhysXVehicle_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\PhysXCharacterKinematic_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\PhysXCooking_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\PhysXCommon_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\SnippetUtils_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\SnippetRender_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\debug\PhysXFoundation_32.lib;opengl32.lib;freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>dependencies\physx-4.1\include;dependencies\physx-4.1\source\common\include;dependencies\physx-4.1\source\common\src;dependencies\physx-4.1\source\physx\src;dependencies\physx-4.1\source\physx\src\device;dependencies\physx-4.1\source\physx\src\buffering;dependencies\physx-4.1\source\physxgpu\include;dependencies\physx-4.1\source\geomutils\include;dependencies\physx-4.1\source\geomutils\src;dependencies\physx-4.1\source\geomutils\src\contact;dependencies\physx-4.1\source\geomutils\src\common;dependencies\physx-4.1\source\geomutils\src\convex;dependencies\physx-4.1\source\geomutils\src\distance;dependencies\physx-4.1\source\geomutils\src\sweep;dependencies\physx-4.1\source\geomutils\src\gjk;dependencies\physx-4.1\source\geomutils\src\intersection;dependencies\physx-4.1\source\geomutils\src\mesh;dependencies\physx-4.1\source\geomutils\src\hf;dependencies\physx-4.1\source\geomutils\src\pcm;dependencies\physx-4.1\source\geomutils\src\ccd;dependencies\physx-4.1\source\lowlevel\api\include;dependencies\physx-4.1\source\lowlevel\software\include;dependencies\physx-4.1\source\lowlevel\common\include\pipeline;dependencies\physx-4.1\source\lowlevelaabb\include;dependencies\physx-4.1\source\lowleveldynamics\include;dependencies\physx-4.1\source\simulationcontroller\include;dependencies\physx-4.1\source\simulationcontroller\src;dependencies\physx-4.1\source\physxcooking\src;dependencies\physx-4.1\source\physxcooking\src\mesh;dependencies\physx-4.1\source\physxcooking\src\convex;dependencies\physx-4.1\source\scenequery\include;dependencies\physx-4.1\source\physxmetadata\core\include;dependencies\physx-4.1\source\immediatemode\include;dependencies\physx-4.1\source\pvd\include;dependencies\physx-4.1\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\PhysXExtensions_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\PhysX_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\PhysXPvdSDK_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\PhysXVehicle_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\PhysXCharacterKinematic_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\PhysXCooking_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\PhysXCommon_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\SnippetUtils_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\SnippetRender_static_32.lib;dependencies\physx-4.1\lib\win.x86_32.vc141.mt\release\PhysXFoundation_32.lib;opengl32.lib;freeglut.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
